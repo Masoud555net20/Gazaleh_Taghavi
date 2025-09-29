@@ -9,7 +9,7 @@ const About: React.FC = () => {
           <div className="lg:w-1/2">
             <div className="relative">
               <img 
-                src="/Pic.png" 
+                src="/pic.png" 
                 alt="غزاله تقوی" 
                 className="rounded-xl w-64 h-auto object-contain mx-auto block transition-transform duration-300 hover:scale-105"
               />
