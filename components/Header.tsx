@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,12 +42,38 @@ const Header: React.FC = () => {
           <a href="#booking" className="hidden md:inline-block bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-800 transition-transform duration-300 hover:scale-105">
             رزرو وقت مشاوره
           </a>
-          <button className={`lg:hidden ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+          <button 
+            className={`lg:hidden ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </button>
         </div>
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-200">
+            <nav className="flex flex-col space-y-4 py-4 px-6">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <a 
+                href="#booking" 
+                className="bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition-colors duration-300 text-center mt-4"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                رزرو وقت مشاوره
+              </a>
+            </nav>
+          </div>
+        )}
       </div>
       <style>{`
         @keyframes shimmer-glow {
