@@ -161,8 +161,8 @@ const Header: React.FC = () => {
           border-radius: 9999px;
           background: transparent;
           transform-origin: center center;
-          will-change: transform, filter, box-shadow;
-          animation: logo-move 4s ease-in-out infinite, logo-hue 6s linear infinite, logo-glow 3.5s ease-in-out infinite;
+          will-change: transform, box-shadow;
+          animation: logo-move 4s ease-in-out infinite, logo-glow 3.5s ease-in-out infinite;
         }
         @keyframes logo-move {
           0% { transform: translateY(0) rotate(0deg); }
