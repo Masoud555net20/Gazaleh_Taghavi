@@ -188,7 +188,12 @@ const Header: React.FC = () => {
         }
         @media (max-width: 640px) {
           /* increase mobile logo a bit for better visibility */
-          .animated-logo { width: 96px; }
+          .animated-logo { 
+            width: 96px; 
+            animation: none !important;
+            transform: none !important;
+            box-shadow: none !important;
+          }
         }
         @media (prefers-reduced-motion: reduce) {
           .animated-logo { animation: none !important; filter: none !important; box-shadow: none !important; transform: none !important; }
