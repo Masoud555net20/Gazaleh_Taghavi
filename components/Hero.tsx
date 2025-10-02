@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
           <div
             key={src}
             className={`absolute inset-0 hero-bg ${index === currentIndex ? 'active' : 'inactive'}`}
-            style={slideStyle}
+            style={{ ...slideStyle, opacity: index === currentIndex ? 1 : 0 }}
           />
         );
       })}

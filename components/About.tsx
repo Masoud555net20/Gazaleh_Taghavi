@@ -34,13 +34,6 @@ const About: React.FC = () => {
         </div>
       </div>
       <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
         /* About image modern styling */
         .about-img-wrap {
           position: relative;
@@ -73,6 +66,11 @@ const About: React.FC = () => {
           transform: translateZ(0);
           box-shadow: 0 22px 56px rgba(59,130,246,0.10);
           filter: none;
+        }
+        @media (max-width: 640px) {
+          .about-img {
+            animation-duration: 4s;
+          }
         }
 
         @keyframes float-slow {
