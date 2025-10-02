@@ -27,9 +27,11 @@ const Header: React.FC = () => {
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-xl border-b border-black/10' : 'bg-transparent'}`}>
       <div className="container mx-auto px-6 py-0">
         <div className="flex items-center justify-between">
-          <div className="w-36 h-auto">
+          <div className="w-24 sm:w-28 h-auto">
             <a href="#" className="transition-all duration-300 hover:scale-110">
-              <img src="/5.png" alt="غزاله تقوی" className="w-36 h-auto animate-shimmer-glow animate-float" />
+              <div className="relative">
+                <img src="/22.gif" alt="غزاله تقوی" className="w-24 sm:w-28 md:w-32 h-auto animated-logo max-w-full rounded-full" />
+              </div>
             </a>
           </div>
           <nav className="hidden lg:flex items-center space-x-6 space-x-reverse">
@@ -98,6 +100,110 @@ const Header: React.FC = () => {
         }
         .animate-float {
           animation: float 3s ease-in-out infinite;
+        }
+        @keyframes color-shift {
+          0% { filter: hue-rotate(0deg) saturate(2); }
+          100% { filter: hue-rotate(360deg) saturate(2); }
+        }
+        .animate-color-shift {
+          animation: color-shift 2s linear infinite;
+        }
+        @keyframes multi-color-shine {
+          0% {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 1.0), 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 120px rgba(59, 130, 246, 0.2);
+          }
+          16.67% {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 1.0), 0 0 40px rgba(239, 68, 68, 0.8), 0 0 60px rgba(239, 68, 68, 0.6), 0 0 100px rgba(239, 68, 68, 0.4), 0 0 120px rgba(239, 68, 68, 0.2);
+          }
+          33.33% {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 1.0), 0 0 40px rgba(124, 58, 237, 0.8), 0 0 60px rgba(124, 58, 237, 0.6), 0 0 100px rgba(124, 58, 237, 0.4), 0 0 120px rgba(124, 58, 237, 0.2);
+          }
+          50% {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 1.0), 0 0 40px rgba(245, 158, 11, 0.8), 0 0 60px rgba(245, 158, 11, 0.6), 0 0 100px rgba(245, 158, 11, 0.4), 0 0 120px rgba(245, 158, 11, 0.2);
+          }
+          66.67% {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 1.0), 0 0 40px rgba(16, 185, 129, 0.8), 0 0 60px rgba(16, 185, 129, 0.6), 0 0 100px rgba(16, 185, 129, 0.4), 0 0 120px rgba(16, 185, 129, 0.2);
+          }
+          83.33% {
+            box-shadow: 0 0 20px rgba(217, 119, 6, 1.0), 0 0 40px rgba(217, 119, 6, 0.8), 0 0 60px rgba(217, 119, 6, 0.6), 0 0 100px rgba(217, 119, 6, 0.4), 0 0 120px rgba(217, 119, 6, 0.2);
+          }
+          100% {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 1.0), 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.6), 0 0 100px rgba(59, 130, 246, 0.4), 0 0 120px rgba(59, 130, 246, 0.2);
+          }
+        }
+        .animate-multi-color-shine {
+          animation: multi-color-shine 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+        .animate-pulse-glow {
+          animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes multi-color-border {
+          0% { border-color: rgba(59, 130, 246, 1); }
+          16.67% { border-color: rgba(239, 68, 68, 1); }
+          33.33% { border-color: rgba(124, 58, 237, 1); }
+          50% { border-color: rgba(245, 158, 11, 1); }
+          66.67% { border-color: rgba(16, 185, 129, 1); }
+          83.33% { border-color: rgba(217, 119, 6, 1); }
+          100% { border-color: rgba(59, 130, 246, 1); }
+        }
+        .animate-multi-color-border {
+          animation: multi-color-border 2s ease-in-out infinite;
+        }
+        /* Prominent logo animation: movement + hue cycling + glow */
+        .animated-logo {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          border-radius: 9999px;
+          background: transparent;
+          transform-origin: center center;
+          will-change: transform, filter, box-shadow;
+          animation: logo-move 4s ease-in-out infinite, logo-hue 6s linear infinite, logo-glow 3.5s ease-in-out infinite;
+        }
+        @keyframes logo-move {
+          0% { transform: translateY(0) rotate(0deg); }
+          25% { transform: translateY(-4px) rotate(2deg); }
+          50% { transform: translateY(-8px) rotate(-2deg); }
+          75% { transform: translateY(-4px) rotate(2deg); }
+          100% { transform: translateY(0) rotate(0deg); }
+        }
+        @keyframes logo-hue {
+          0% { filter: hue-rotate(0deg) saturate(1); }
+          20% { filter: hue-rotate(60deg) saturate(1.05); }
+          40% { filter: hue-rotate(140deg) saturate(1.1); }
+          60% { filter: hue-rotate(220deg) saturate(1.1); }
+          80% { filter: hue-rotate(300deg) saturate(1.05); }
+          100% { filter: hue-rotate(360deg) saturate(1); }
+        }
+        @keyframes logo-glow {
+          0% { box-shadow: 0 6px 14px rgba(59,130,246,0.18); }
+          25% { box-shadow: 0 8px 20px rgba(124,58,237,0.22); }
+          50% { box-shadow: 0 10px 28px rgba(245,158,11,0.26); }
+          75% { box-shadow: 0 8px 20px rgba(16,185,129,0.22); }
+          100% { box-shadow: 0 6px 14px rgba(59,130,246,0.18); }
+        }
+        @media (max-width: 640px) {
+          /* increase mobile logo a bit for better visibility */
+          .animated-logo { width: 96px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .animated-logo { animation: none !important; filter: none !important; box-shadow: none !important; transform: none !important; }
+        }
+        @keyframes multi-color-border {
+          0% { border-color: rgba(59, 130, 246, 1); }
+          16.67% { border-color: rgba(239, 68, 68, 1); }
+          33.33% { border-color: rgba(124, 58, 237, 1); }
+          50% { border-color: rgba(245, 158, 11, 1); }
+          66.67% { border-color: rgba(16, 185, 129, 1); }
+          83.33% { border-color: rgba(217, 119, 6, 1); }
+          100% { border-color: rgba(59, 130, 246, 1); }
+        }
+        .animate-multi-color-border {
+          animation: multi-color-border 2s ease-in-out infinite;
         }
       `}</style>
     </header>
