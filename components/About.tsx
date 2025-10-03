@@ -11,7 +11,7 @@ const About: React.FC = () => {
                 <img
                   src="/Pic.png"
                   alt="غزاله تقوی"
-                  className="about-img w-24 sm:w-32 md:w-40 lg:w-48 xl:w-56 h-auto object-cover block rounded-full"
+                  className="about-img w-20 sm:w-28 md:w-36 lg:w-56 xl:w-64 h-auto object-cover block rounded-full"
                 />
               </div>
             </div>
@@ -98,11 +98,7 @@ const About: React.FC = () => {
         @media (prefers-reduced-motion: reduce) {
           .about-img-wrap, .about-img { transition: none !important; animation: none !important; transform: none !important; }
         }
-        @media (max-width: 640px) {
-          .about-img {
-            width: 200px; /* Adjust the width as needed for mobile */
-          }
-        }
+
       `}</style>
     </section>
   );

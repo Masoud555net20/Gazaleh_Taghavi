@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
 
       {/* Content - Positioned higher for mobile */}
       <div className="relative z-10 p-4 sm:p-6 max-w-6xl mx-auto w-full flex flex-col items-center justify-center mobile-top-content" style={{ zIndex: 3 }}>
-        <h1 className="font-nastaliq hero-title leading-none mb-4 animate-fade-in-down rainbow-text">
+        <h1 className="font-nastaliq hero-title leading-none mb-4 animate-fade-in-down animate-pulse" style={{ color: 'white', animation: 'white-glow 2s ease-in-out infinite alternate' }}>
           غزاله تقوی
         </h1>
         <p className="hero-subtitle text-base sm:text-lg md:text-xl font-light mb-6 animate-fade-in-up">
@@ -136,6 +136,7 @@ const Hero: React.FC = () => {
         }
         /* Rainbow gradient text effect */
         .rainbow-text {
+          color: white;
           background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
           background-size: 400% 400%;
           -webkit-background-clip: text;
@@ -143,6 +144,90 @@ const Hero: React.FC = () => {
           -webkit-text-fill-color: transparent;
           animation: rainbow 3s ease-in-out infinite;
           filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+          text-shadow:
+            0 0 5px #ff6b6b,
+            0 0 10px #4ecdc4,
+            0 0 15px #45b7d1,
+            0 0 20px #96ceb4,
+            0 0 25px #feca57,
+            0 0 30px #ff9ff3,
+            0 0 35px #54a0ff,
+            2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes rainbow {
+          0%, 100% {
+            background-position: 0% 50%;
+            text-shadow:
+              0 0 5px #ff6b6b,
+              0 0 10px #4ecdc4,
+              0 0 15px #45b7d1,
+              0 0 20px #96ceb4,
+              0 0 25px #feca57,
+              0 0 30px #ff9ff3,
+              0 0 35px #54a0ff,
+              2px 2px 10px rgba(0, 0, 0, 0.8);
+          }
+          16.67% {
+            background-position: 16.67% 50%;
+            text-shadow:
+              0 0 5px #4ecdc4,
+              0 0 10px #45b7d1,
+              0 0 15px #96ceb4,
+              0 0 20px #feca57,
+              0 0 25px #ff9ff3,
+              0 0 30px #54a0ff,
+              0 0 35px #ff6b6b,
+              2px 2px 10px rgba(0, 0, 0, 0.8);
+          }
+          33.33% {
+            background-position: 33.33% 50%;
+            text-shadow:
+              0 0 5px #45b7d1,
+              0 0 10px #96ceb4,
+              0 0 15px #feca57,
+              0 0 20px #ff9ff3,
+              0 0 25px #54a0ff,
+              0 0 30px #ff6b6b,
+              0 0 35px #4ecdc4,
+              2px 2px 10px rgba(0, 0, 0, 0.8);
+          }
+          50% {
+            background-position: 50% 50%;
+            text-shadow:
+              0 0 5px #96ceb4,
+              0 0 10px #feca57,
+              0 0 15px #ff9ff3,
+              0 0 20px #54a0ff,
+              0 0 25px #ff6b6b,
+              0 0 30px #4ecdc4,
+              0 0 35px #45b7d1,
+              2px 2px 10px rgba(0, 0, 0, 0.8);
+          }
+          66.67% {
+            background-position: 66.67% 50%;
+            text-shadow:
+              0 0 5px #feca57,
+              0 0 10px #ff9ff3,
+              0 0 15px #54a0ff,
+              0 0 20px #ff6b6b,
+              0 0 25px #4ecdc4,
+              0 0 30px #45b7d1,
+              0 0 35px #96ceb4,
+              2px 2px 10px rgba(0, 0, 0, 0.8);
+          }
+          83.33% {
+            background-position: 83.33% 50%;
+            text-shadow:
+              0 0 5px #ff9ff3,
+              0 0 10px #54a0ff,
+              0 0 15px #ff6b6b,
+              0 0 20px #4ecdc4,
+              0 0 25px #45b7d1,
+              0 0 30px #96ceb4,
+              0 0 35px #feca57,
+              2px 2px 10px rgba(0, 0, 0, 0.8);
+          }
         }
 
         /* Colorful outline effect */
@@ -289,7 +374,7 @@ const Hero: React.FC = () => {
         }
         @keyframes colorful-glow {
           0% {
-            text-shadow: 
+            text-shadow:
               0 0 10px #3b82f6,
               0 0 20px #3b82f6,
               0 0 30px #8b5cf6,
@@ -297,7 +382,7 @@ const Hero: React.FC = () => {
               2px 2px 8px rgba(0, 0, 0, 0.8);
           }
           100% {
-            text-shadow: 
+            text-shadow:
               0 0 15px #ec4899,
               0 0 25px #8b5cf6,
               0 0 35px #3b82f6,
@@ -306,42 +391,23 @@ const Hero: React.FC = () => {
           }
         }
 
-        /* Multi-color shadow effect for colorful appearance */
-        .hero-title {
-          color: white;
-          text-shadow: 
-            0 0 5px #ff6b6b,
-            0 0 10px #4ecdc4,
-            0 0 15px #45b7d1,
-            0 0 20px #96ceb4,
-            0 0 25px #feca57,
-            0 0 30px #ff9ff3,
-            2px 2px 10px rgba(0, 0, 0, 0.8);
-          animation: shadow-pulse 3s ease-in-out infinite;
+        @keyframes white-glow {
+          0% {
+            text-shadow:
+              0 0 10px rgba(255, 255, 255, 0.3),
+              0 0 20px rgba(255, 255, 255, 0.2),
+              0 0 30px rgba(255, 255, 255, 0.1);
+          }
+          100% {
+            text-shadow:
+              0 0 5px rgba(255, 255, 255, 0.5),
+              0 0 15px rgba(255, 255, 255, 0.4),
+              0 0 25px rgba(255, 255, 255, 0.3),
+              0 0 35px rgba(255, 255, 255, 0.1);
+          }
         }
 
-        @keyframes shadow-pulse {
-          0%, 100% {
-            text-shadow: 
-              0 0 5px #ff6b6b,
-              0 0 10px #4ecdc4,
-              0 0 15px #45b7d1,
-              0 0 20px #96ceb4,
-              0 0 25px #feca57,
-              0 0 30px #ff9ff3,
-              2px 2px 10px rgba(0, 0, 0, 0.8);
-          }
-          50% {
-            text-shadow: 
-              0 0 10px #4ecdc4,
-              0 0 15px #45b7d1,
-              0 0 20px #96ceb4,
-              0 0 25px #feca57,
-              0 0 30px #ff9ff3,
-              0 0 35px #ff6b6b,
-              3px 3px 12px rgba(0, 0, 0, 0.9);
-          }
-        }
+
       `}</style>
     </section>
   );

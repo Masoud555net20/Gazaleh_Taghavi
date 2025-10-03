@@ -21,25 +21,41 @@ const Header: React.FC = () => {
     { name: 'سوالات متداول', href: '#faq' },
     { name: 'مقالات', href: '#blog' },
     { name: 'نظرات موکلین', href: '#testimonials' },
+    { name: 'ارتباط با ما', href: '#contact' },
   ];
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-xl border-b border-black/10' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 py-0">
+      <div className="container mx-auto px-4 py-0 max-w-7xl">
         <div className="flex items-center justify-between">
-          <div className="w-24 sm:w-28 h-auto">
-            <a href="#" className="transition-all duration-300 hover:scale-110">
-              <div className="relative">
-                <img src="/5.png" alt="غزاله تقوی" className="w-24 sm:w-28 md:w-32 h-auto animated-logo max-w-full rounded-full" />
-              </div>
-            </a>
+          <div className="flex items-center gap-4">
+            <div className="w-20 sm:w-24 lg:w-20 h-auto">
+              <a href="#" className="transition-all duration-300 hover:scale-110">
+                <div className="relative">
+                  <img src="/5.png" alt="غزاله تقوی" className="w-20 sm:w-24 lg:w-20 h-auto animated-logo max-w-full rounded-full" />
+                </div>
+              </a>
+            </div>
+            <div className="hidden sm:block">
+              <h1 className="font-nastaliq text-xl lg:text-2xl font-bold text-white animate-header-title" style={{
+                animation: 'header-title-glow 2s ease-in-out infinite, header-title-float 3s ease-in-out infinite, header-title-shine 4s linear infinite',
+                textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.2)',
+                background: 'linear-gradient(45deg, #ffffff, #f0f9ff, #e0f2fe, #ffffff)',
+                backgroundSize: '300% 300%',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
+                غزاله تقوی
+              </h1>
+            </div>
           </div>
-          <nav className="hidden lg:flex items-center space-x-6 space-x-reverse">
+          <nav className="hidden lg:flex items-center space-x-4 space-x-reverse text-sm">
             {navLinks.map((link, index) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className={`transition-colors duration-300 font-medium text-sm ${isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-200 hover:text-white'}`}
+              <a
+                key={link.name}
+                href={link.href}
+                className={`transition-colors duration-300 font-medium px-2 py-1 whitespace-nowrap ${isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-200 hover:text-white'}`}
                 style={{ animation: `wave-motion 1s ease-in-out infinite ${index * 0.1}s` }}
               >
                 {link.name}
@@ -162,6 +178,55 @@ const Header: React.FC = () => {
         }
         .animate-multi-color-border {
           animation: multi-color-border 2s ease-in-out infinite;
+        }
+
+        /* Header Title Animation */
+        @keyframes header-title-glow {
+          0%, 100% {
+            text-shadow:
+              0 0 5px rgba(255, 255, 255, 0.2),
+              0 0 10px rgba(255, 255, 255, 0.1),
+              0 0 15px rgba(255, 255, 255, 0.05);
+            opacity: 0.7;
+          }
+          50% {
+            text-shadow:
+              0 0 20px rgba(255, 255, 255, 1),
+              0 0 40px rgba(255, 255, 255, 0.8),
+              0 0 60px rgba(255, 255, 255, 0.6),
+              0 0 80px rgba(255, 255, 255, 0.4),
+              0 0 100px rgba(255, 255, 255, 0.2);
+            opacity: 1;
+          }
+        }
+
+        @keyframes header-title-float {
+          0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          25% {
+            transform: translateY(-2px) rotate(0.5deg);
+          }
+          50% {
+            transform: translateY(-4px) rotate(0deg);
+          }
+          75% {
+            transform: translateY(-2px) rotate(-0.5deg);
+          }
+        }
+
+        .animate-header-title {
+          display: inline-block;
+          will-change: transform, text-shadow;
+        }
+
+        @keyframes header-title-shine {
+          0% {
+            background-position: -200% center;
+          }
+          100% {
+            background-position: 200% center;
+          }
         }
         @keyframes rainbow-text {
           0% { color: #3b82f6; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8); }
