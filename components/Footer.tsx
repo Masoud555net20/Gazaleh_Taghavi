@@ -21,7 +21,7 @@ const TelegramIcon = () => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 text-white py-12 px-6 overflow-hidden">
+    <footer id="contact" className="relative bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 text-white py-12 px-6 overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 animate-gradient-x"></div>
       </div>

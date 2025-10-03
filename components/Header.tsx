@@ -30,7 +30,7 @@ const Header: React.FC = () => {
           <div className="w-24 sm:w-28 h-auto">
             <a href="#" className="transition-all duration-300 hover:scale-110">
               <div className="relative">
-                <img src="/22.gif" alt="غزاله تقوی" className="w-24 sm:w-28 md:w-32 h-auto animated-logo max-w-full rounded-full" />
+                <img src="/5.png" alt="غزاله تقوی" className="w-24 sm:w-28 md:w-32 h-auto animated-logo max-w-full rounded-full" />
               </div>
             </a>
           </div>
@@ -161,38 +161,43 @@ const Header: React.FC = () => {
           border-radius: 9999px;
           background: transparent;
           transform-origin: center center;
-          will-change: transform, box-shadow;
-          animation: logo-move 4s ease-in-out infinite, logo-glow 3.5s ease-in-out infinite;
+          will-change: transform, box-shadow, filter;
+          animation: logo-move 4s ease-in-out infinite, logo-hue 6s linear infinite, logo-glow 6s ease-in-out infinite;
         }
         @keyframes logo-move {
-          0% { transform: translateY(0) rotate(0deg); }
-          25% { transform: translateY(-4px) rotate(2deg); }
-          50% { transform: translateY(-8px) rotate(-2deg); }
-          75% { transform: translateY(-4px) rotate(2deg); }
-          100% { transform: translateY(0) rotate(0deg); }
+          0% { transform: translateY(0) rotate(0deg) scale(1); }
+          20% { transform: translateY(-3px) rotate(1deg) scale(1.02); }
+          40% { transform: translateY(-6px) rotate(-1deg) scale(1.05); }
+          60% { transform: translateY(-3px) rotate(2deg) scale(1.03); }
+          80% { transform: translateY(-1px) rotate(0.5deg) scale(1.01); }
+          100% { transform: translateY(0) rotate(0deg) scale(1); }
         }
         @keyframes logo-hue {
-          0% { filter: hue-rotate(0deg) saturate(1); }
-          20% { filter: hue-rotate(60deg) saturate(1.05); }
-          40% { filter: hue-rotate(140deg) saturate(1.1); }
-          60% { filter: hue-rotate(220deg) saturate(1.1); }
-          80% { filter: hue-rotate(300deg) saturate(1.05); }
-          100% { filter: hue-rotate(360deg) saturate(1); }
+          0% { filter: hue-rotate(0deg) saturate(1.2); }
+          14% { filter: hue-rotate(50deg) saturate(1.2); } /* Blue to Purple */
+          28% { filter: hue-rotate(100deg) saturate(1.2); } /* Purple to Green */
+          42% { filter: hue-rotate(150deg) saturate(1.2); } /* Green to Red */
+          57% { filter: hue-rotate(200deg) saturate(1.2); } /* Red to Orange */
+          71% { filter: hue-rotate(250deg) saturate(1.2); } /* Orange to Pink */
+          85% { filter: hue-rotate(300deg) saturate(1.2); } /* Pink to Yellow */
+          100% { filter: hue-rotate(360deg) saturate(1.2); } /* Yellow back to Blue */
         }
         @keyframes logo-glow {
-          0% { box-shadow: 0 6px 14px rgba(59,130,246,0.18); }
-          25% { box-shadow: 0 8px 20px rgba(124,58,237,0.22); }
-          50% { box-shadow: 0 10px 28px rgba(245,158,11,0.26); }
-          75% { box-shadow: 0 8px 20px rgba(16,185,129,0.22); }
-          100% { box-shadow: 0 6px 14px rgba(59,130,246,0.18); }
+          0% { box-shadow: 0 6px 14px rgba(59,130,246,0.3), 0 0 20px rgba(59,130,246,0.2); } /* Blue */
+          14% { box-shadow: 0 8px 20px rgba(124,58,237,0.35), 0 0 25px rgba(124,58,237,0.25); } /* Purple */
+          28% { box-shadow: 0 10px 28px rgba(16,185,129,0.4), 0 0 30px rgba(16,185,129,0.3); } /* Green */
+          42% { box-shadow: 0 8px 20px rgba(239,68,68,0.35), 0 0 25px rgba(239,68,68,0.25); } /* Red */
+          57% { box-shadow: 0 10px 28px rgba(245,158,11,0.4), 0 0 30px rgba(245,158,11,0.3); } /* Orange */
+          71% { box-shadow: 0 8px 20px rgba(236,72,153,0.35), 0 0 25px rgba(236,72,153,0.25); } /* Pink */
+          85% { box-shadow: 0 10px 28px rgba(234,179,8,0.4), 0 0 30px rgba(234,179,8,0.3); } /* Yellow */
+          100% { box-shadow: 0 6px 14px rgba(59,130,246,0.3), 0 0 20px rgba(59,130,246,0.2); } /* Back to Blue */
         }
         @media (max-width: 640px) {
           /* increase mobile logo a bit for better visibility */
           .animated-logo { 
             width: 96px; 
-            animation: none !important;
-            transform: none !important;
-            box-shadow: none !important;
+            animation: logo-move 6s ease-in-out infinite, logo-hue 8s linear infinite, logo-glow 8s ease-in-out infinite !important;
+            box-shadow: 0 4px 12px rgba(59,130,246,0.2) !important;
           }
         }
         @media (prefers-reduced-motion: reduce) {
