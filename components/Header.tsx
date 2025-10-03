@@ -35,8 +35,13 @@ const Header: React.FC = () => {
             </a>
           </div>
           <nav className="hidden lg:flex items-center space-x-6 space-x-reverse">
-            {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className={`transition-colors duration-300 font-medium text-sm ${isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-200 hover:text-white'}`}>
+            {navLinks.map((link, index) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className={`transition-colors duration-300 font-medium text-sm ${isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-200 hover:text-white'}`}
+                style={{ animation: `wave-motion 1s ease-in-out infinite ${index * 0.1}s` }}
+              >
                 {link.name}
               </a>
             ))}
@@ -56,11 +61,12 @@ const Header: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-gray-200">
             <nav className="flex flex-col space-y-4 py-4 px-6">
-              {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
                 <a 
                   key={link.name} 
                   href={link.href} 
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
+                  style={{ animation: `wave-motion 1s ease-in-out infinite ${index * 0.1}s` }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -104,6 +110,10 @@ const Header: React.FC = () => {
         @keyframes color-shift {
           0% { filter: hue-rotate(0deg) saturate(2); }
           100% { filter: hue-rotate(360deg) saturate(2); }
+        }
+        @keyframes wave-motion {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-3px); }
         }
         .animate-color-shift {
           animation: color-shift 2s linear infinite;

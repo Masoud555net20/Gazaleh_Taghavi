@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
       <div className="relative max-w-4xl mx-auto text-center space-y-8 z-10">
         {/* Main Title */}
         <div className="space-y-2">
-          <h2 className="text-4xl md:text-6xl font-bold font-nastaliq text-white drop-shadow-lg animate-pulse">
+          <h2 className="text-6xl md:text-8xl font-extrabold font-nastaliq text-white drop-shadow-2xl">
             غزاله تقوی
           </h2>
           <p className="text-lg md:text-xl text-gray-200 font-light">
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
               <div className="absolute inset-0 rounded-full bg-blue-500/20 scale-0 group-hover:scale-100 transition-transform duration-300 opacity-0 group-hover:opacity-100" />
             </a>
             <a
-              href="https://www.instagram.com/ghazalehtaghavi"
+              href="https://www.threads.com/@taghavi_ghazaleh?xmt=AQF0fSI7VOfXewTjN584IqRXNl8CqQTiCvGRdwPzIOZX8tA"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-xl hover:shadow-pink-500/30 animate-pulse"
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-6 border-t border-white/10 text-sm text-gray-400 animate-fade-in">
+        <div className="pt-6 border-t border-white/20 text-sm text-gray-300 animate-fade-in">
           <p>&copy; {new Date().getFullYear()} غزاله تقوی. تمامی حقوق محفوظ است.</p>
         </div>
       </div>

@@ -66,6 +66,7 @@ const About: React.FC = () => {
           transform: translateZ(0);
           box-shadow: 0 22px 56px rgba(59,130,246,0.10);
           filter: none;
+          transform: scale(1.05);
         }
         @media (max-width: 640px) {
           .about-img {
@@ -96,6 +97,11 @@ const About: React.FC = () => {
         }
         @media (prefers-reduced-motion: reduce) {
           .about-img-wrap, .about-img { transition: none !important; animation: none !important; transform: none !important; }
+        }
+        @media (max-width: 640px) {
+          .about-img {
+            width: 200px; /* Adjust the width as needed for mobile */
+          }
         }
       `}</style>
     </section>
