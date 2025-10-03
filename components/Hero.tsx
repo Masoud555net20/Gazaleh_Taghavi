@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
 
       {/* Content - Positioned higher for mobile */}
       <div className="relative z-10 p-4 sm:p-6 max-w-6xl mx-auto w-full flex flex-col items-center justify-center mobile-top-content" style={{ zIndex: 3 }}>
-        <h1 className="font-nastaliq hero-title leading-none mb-4 animate-fade-in-down">
+        <h1 className="font-nastaliq hero-title leading-none mb-4 animate-fade-in-down rainbow-text">
           غزاله تقوی
         </h1>
         <p className="hero-subtitle text-base sm:text-lg md:text-xl font-light mb-6 animate-fade-in-up">

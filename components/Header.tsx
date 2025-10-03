@@ -163,6 +163,28 @@ const Header: React.FC = () => {
         .animate-multi-color-border {
           animation: multi-color-border 2s ease-in-out infinite;
         }
+        @keyframes rainbow-text {
+          0% { color: #3b82f6; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8); }
+          12.5% { color: #ef4444; text-shadow: 0 0 10px rgba(239, 68, 68, 0.8); }
+          25% { color: #7c3aed; text-shadow: 0 0 10px rgba(124, 58, 237, 0.8); }
+          37.5% { color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.8); }
+          50% { color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.8); }
+          62.5% { color: #d97706; text-shadow: 0 0 10px rgba(217, 119, 6, 0.8); }
+          75% { color: #ec4899; text-shadow: 0 0 10px rgba(236, 72, 153, 0.8); }
+          87.5% { color: #eab308; text-shadow: 0 0 10px rgba(234, 179, 8, 0.8); }
+          100% { color: #3b82f6; text-shadow: 0 0 10px rgba(59, 130, 246, 0.8); }
+        }
+        .rainbow-text {
+          animation: rainbow-text 3s ease-in-out infinite;
+          font-weight: bold;
+          text-align: center;
+          background: linear-gradient(45deg, #3b82f6, #ef4444, #7c3aed, #f59e0b, #10b981, #d97706, #ec4899, #eab308);
+          background-size: 400% 400%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          display: inline-block;
+        }
         /* Prominent logo animation: movement + hue cycling + glow */
         .animated-logo {
           display: block;
