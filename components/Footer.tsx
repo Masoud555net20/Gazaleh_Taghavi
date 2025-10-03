@@ -84,13 +84,14 @@ const Footer: React.FC = () => {
                   ۰۹۱۸۲۳۰۸۲۹۰
                 </span>
               </div>
+
               <div className="flex items-center gap-3 group cursor-pointer">
                 <div className="relative">
-                  <EnvelopeIcon className="w-6 h-6 text-green-400 group-hover:text-green-300 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-12 animate-pulse" />
+                  <EnvelopeIcon className="w-6 h-6 text-green-400 group-hover:text-green-300 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-pulse" />
                   <div className="absolute inset-0 bg-green-400/30 rounded-full blur-md scale-0 group-hover:scale-150 transition-transform duration-300"></div>
                 </div>
-                <a href="mailto:info@taghavilaw.com" className="text-lg font-semibold text-white hover:text-green-200 transition-all duration-300 group-hover:underline decoration-2 underline-offset-4">
-                  info@taghavilaw.com
+                <a href="mailto:Taghvii.lawyer@gmail.com" className="text-lg font-semibold text-white hover:text-green-200 transition-all duration-300 group-hover:underline decoration-2 underline-offset-4">
+                  Taghvii.lawyer@gmail.com
                 </a>
               </div>
             </div>
@@ -103,6 +104,7 @@ const Footer: React.FC = () => {
                 همدان، برج آریان، طبقه ۱۲، واحد ۴
               </span>
             </div>
+
             <div className="w-full max-w-2xl mx-auto mt-4 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 rounded-lg blur-xl animate-pulse"></div>
               <iframe
@@ -117,6 +119,41 @@ const Footer: React.FC = () => {
                 title="Location Map"
               ></iframe>
               <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-blue-900/10 via-transparent to-purple-900/10 pointer-events-none animate-gradient-y"></div>
+            </div>
+
+            {/* Business Hours */}
+            <div className="relative max-w-lg mx-auto mt-4">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 rounded-xl blur-xl animate-pulse"></div>
+              <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 hover:scale-105 hover:bg-white/15">
+                <div className="text-center space-y-3">
+                  <div className="flex items-center justify-center gap-2 mb-3">
+                    <div className="relative">
+                      <svg className="w-6 h-6 text-yellow-400 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                      <div className="absolute inset-0 bg-yellow-400/30 rounded-full blur-md animate-pulse"></div>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white font-nastaliq">
+                      ساعات کاری
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3 text-gray-200">
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg px-4 py-3 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                      <span className="text-lg font-bold text-green-400">شنبه تا چهارشنبه:</span>
+                      <span className="text-lg font-bold text-white">۸:۰۰ تا ۱۸:۰۰</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg px-4 py-3 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                      <span className="text-lg font-bold text-red-400">پنجشنبه و جمعه:</span>
+                      <span className="text-lg font-bold text-white">تعطیل</span>
+                    </div>
+                  </div>
+
+                  <div className="text-sm text-gray-300 mt-4 opacity-90 font-medium">
+                    آماده ارائه خدمات حقوقی در ساعات کاری
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
