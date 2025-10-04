@@ -117,7 +117,7 @@ const About: React.FC = () => {
           overflow: hidden;
           background: transparent;
         }
-        .about-img {
+        .about-img {n
           display: block;
           border-radius: 9999px;
           background: transparent;
